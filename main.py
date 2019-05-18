@@ -1,6 +1,6 @@
 import pygame
-import random
-from Framework.animation import Animation
+from Framework.sceneManager import SceneManager
+from mainScene import mainScene
 
 if __name__ == '__main__' :
     pygame.init()
@@ -9,21 +9,15 @@ if __name__ == '__main__' :
     pygame.display.set_caption("Hit A Ball")
     clock = pygame.time.Clock()
     run = True
-    tmp_anim = list()
-    for i in range(8) :
-        tmp_anim.append('./Resources/Images/Water/'+str(i+1)+'.png')
-    new_anim = Animation(tmp_anim,10)
-    group = pygame.sprite.Group(new_anim)
+
+    SceneManager.getInstance().changeScene(mainScene(screen,clock))
+
     while run:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
                 pass
-
-        group.update()
-
-        screen.fill(pygame.Color('white'))
-        group.draw(screen)
+        SceneManager.getInstance().update()
         pygame.display.flip()
         clock.tick(60)
 
