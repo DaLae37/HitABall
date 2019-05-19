@@ -18,7 +18,7 @@ class Animation(Sprite) :
         self.current_frame = 0
         self.image = self.images[self.current_frame]
 
-        self.rect = pygame.Rect(5, 5, 64, 64)
+        self.rect = pygame.Rect(0, 0, self.image.convert().get_width(), self.image.convert().get_height())
 
     def update(self):
         if self.current_frame is self.image_count -1 :
@@ -27,3 +27,8 @@ class Animation(Sprite) :
             self.current_frame += 1
         self.image = self.images[self.current_frame]
         self.clock.tick(self.frames)
+
+    def set_position(self,pos) :
+        width = self.image.convert().get_width()
+        height = self.image.convert().get_height()
+        self.rect = pygame.Rect(pos[0],pos[1],width, height)
