@@ -9,11 +9,11 @@ class gameScene(Scene) :
         self.screen = screen
         self.clock = clock
 
-        load_resources()
+        self.load_resources()
 
     def update(self) :
         self.group.update()
-        self.new_anim.set_position((random.randrange(0, 200),100))
+        self.top_water.set_position((random.randrange(0, 200),100))
         self.screen.fill(pygame.Color('white'))
         self.group.draw(self.screen)
 

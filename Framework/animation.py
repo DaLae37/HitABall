@@ -28,7 +28,6 @@ class Animation(Sprite) :
         self.image = self.images[self.current_frame]
         self.clock.tick(self.frames)
 
-    def set_position(self,pos) :
-        width = self.image.convert().get_width()
-        height = self.image.convert().get_height()
-        self.rect = pygame.Rect(pos[0],pos[1],width, height)
+    def set_position(self, pos) :
+        self.rect.x = pos[0]
+        self.rect.y = pos[1]

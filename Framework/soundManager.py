@@ -15,11 +15,10 @@ class SoundManager() :
         return cls.instance
 
     def load_music(self, directory) :
-
         self.stop_music()
 
         pygame.mixer.music.load(directory)
-        pygame.mixer.music.play()
+        pygame.mixer.music.play(-1)
 
     def stop_music(self) :
         if pygame.mixer.get_busy() :
@@ -30,4 +29,4 @@ class SoundManager() :
         self.sound_dict[sound_name] = sound
 
     def play_sound(self, sound_name) :
-        sound_dic[sound_name].play()
+        self.sound_dict[sound_name].play()
