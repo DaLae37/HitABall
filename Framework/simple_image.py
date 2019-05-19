@@ -7,13 +7,14 @@ class SimpleImage() :
     def __init__(self, directory) :
         self.image = pygame.image.load(directory)
         self.rect = self.image.get_rect()
+        self.centerMode = False
 
     def getInfo(self) :
         return (self.image, self.rect)
 
     def setPos(self, pos) :
-        self.rect.x = pos[0] - (self.getSize()[0] // 2) if self.centerMode else 0
-        self.rect.y = pos[1] - (self.getSize()[1] // 2) if self.centerMode else 0
+        self.rect.x = pos[0] - ((self.getSize()[0] // 2) if self.centerMode else 0)
+        self.rect.y = pos[1] - ((self.getSize()[1] // 2) if self.centerMode else 0)
 
     def addPos(self, pos) :
         self.rect.x += pos[0]
