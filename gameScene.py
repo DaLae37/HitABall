@@ -4,8 +4,11 @@ import math
 from Framework.sceneManager import Scene, SceneManager
 from Framework.animation import Animation
 from Framework.simple_image import SimpleImage
+from Framework.cameraManager import CameraManager
 
 class gameScene(Scene) :
+
+    objectList = []
 
     def __init__(self, screen, clock) :
         self.screen = screen
@@ -15,12 +18,17 @@ class gameScene(Scene) :
         self.load_resources()
 
     def update(self) :
-        self.group.update()
-        self.top_water.set_position((500,500))
+        CameraManager().getInstance().update()
         self.screen.fill(pygame.Color('white'))
-        self.group.draw(self.screen)
+        self.top_water.update()
 
-        self.screen.blit(self.ball.getSurface(),self.ball.getPos())
+        for si in self.objectList :
+
+            if CameraManager.getInstance().followedObject is si :
+                self.screen.blit(si.getSurface(), si.getPos())
+            else :
+                self.screen.blit(si.getSurface(), (si.getPos()[0]-CameraManager.getInstance().getCameraPos()[0], si.getPos()[1] - CameraManager.getInstance().getCameraPos()[1]))
+                
 
         if self.isMove :
             self.ball.addPos((-200 * math.cos(45), -200 * math.cos(45) + 9.8 * self.t))
@@ -39,7 +47,11 @@ class gameScene(Scene) :
         for i in range(8) :
             self.water_list.append('Resources/Images/Water/'+str(i+1)+'.png')
         self.top_water = Animation(self.water_list,math.sqrt(9.8*100/(2 * math.pi) * math.tanh(2 * math.pi)))
-        self.group = pygame.sprite.Group(self.top_water)
+        self.top_water.setPos((500,500))
+
+        self.objectList.append(self.top_water)
 
         self.ball = SimpleImage("Resources/Images/Object/Ball.png")
         self.ball.setPos((1200, 600))
+        self.objectList.append(self.ball)
+        CameraManager().getInstance().setFollowedObject(self.ball)

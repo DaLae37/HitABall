@@ -28,6 +28,12 @@ class Animation(Sprite) :
         self.image = self.images[self.current_frame]
         self.clock.tick(self.frames)
 
-    def set_position(self, pos) :
+    def setPos(self, pos) :
         self.rect.x = pos[0]
         self.rect.y = pos[1]
+
+    def getPos(self) :
+        return (self.rect.x, self.rect.y)
+
+    def getSurface(self) :
+        return self.images[self.current_frame]
