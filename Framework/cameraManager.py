@@ -15,7 +15,11 @@ class CameraManager() :
         if self.isFollowing :
             x = self.followedObject.getPos()[0]
             y = self.followedObject.getPos()[1]
-            self.setCameraPos((x + self.dX , y + self.dY))
+            self.addCameraPos((x - self.dX , y - self.dY))
+            self.dX = x
+            self.dY = y
+            if self.getCameraPos()[1] > 0 :
+                self.setCameraPos((self.getCameraPos()[0],0))
 
     @classmethod
     def getInstance(cls) :
@@ -36,8 +40,8 @@ class CameraManager() :
 
     def setFollowedObject(self, obj) :
         self.followedObject = obj
-        self.dX = self.cameraX - obj.getPos()[0]
-        self.dY = self.cameraY - obj.getPos()[1]
+        self.dX = obj.getPos()[0]
+        self.dY = obj.getPos()[1]
         self.isFollowing = True
 
     def releaseObject(self) :

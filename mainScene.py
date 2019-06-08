@@ -31,6 +31,7 @@ class mainScene(Scene) :
             if event.type == pygame.MOUSEBUTTONDOWN :
                 if self.startButton.isCollisionRect(pygame.mouse.get_pos()) :
                     SceneManager.getInstance().changeScene(gameScene(self.screen, self.clock))
+                    return
 
                 if self.exitButton.isCollisionRect(pygame.mouse.get_pos()) :
                     SceneManager.getInstance().isQuit = True
@@ -40,7 +41,7 @@ class mainScene(Scene) :
     def load_resources(self) :
         SoundManager.getInstance().load_music("Resources/Sounds/BGM.mp3")
 
-        self.background = SimpleImage("Resources/Images/Background/background.png")
+        self.background = SimpleImage("Resources/Images/Background/mainScene.png")
         self.background.setPos((0,0))
         self.background.setSize((1280,720))
         self.simple_image_list.append(self.background)

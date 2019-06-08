@@ -38,6 +38,9 @@ class SimpleImage() :
     def getSurface(self) :
         return self.image
 
+    def setSurface(self, image) :
+        self.image = image
+
     def isCollisionRect(self, pos) :
         left_x = self.getPos()[0]
         left_y = self.getPos()[1]
@@ -45,3 +48,6 @@ class SimpleImage() :
         right_y = self.getPos()[1] + self.getSize()[1]
 
         return left_x <= pos[0] and left_y <= pos[1] and right_x >= pos[0] and right_y >= pos[1]
+
+    def getTag(self) :
+        return "SimpleImage"
