@@ -13,34 +13,36 @@ class Ball(SimpleImage) :
         self.t = 0
         self.power = 50
         self.beforeT = 0
-
-    @classmethod
-    def getInstance(cls) :
-        if cls.instance is None :
-            cls.instance = Ball()
-        return cls.instance
+        self.degree = 0
 
     def update(self) :
 
         if self.isStart :
             if self.isMove :
-                self.addPos((-100 * math.cos(45), -self.power * math.cos(45) + 9.8 * self.t - self.beforeT))
-                self.setSurface(pygame.transform.rotate(self.getSurface(), 90))
+                self.addPos((-self.power * math.cos(self.degree * math.pi / 180), -self.power * math.sin(self.degree * math.pi / 180) + 9.8 * (self.t - self.beforeT)))
         else :
             self.addPos((0,0.5 * 9.8 * (self.t * self.t)))
 
         self.t+=1
 
     def setIsMove(self, isMove) :
-        self.isMove = isMove
         if self.isMove is False and isMove is True :
             self.beforeT = self.t
+        self.isMove = isMove
 
     def getIsMove(self) :
         return self.isMove
 
     def setIsStart(self, isStart) :
+        if self.isStart is True :
+            self.t = 0
         self.isStart = isStart
 
     def getIsStart(self) :
         return self.isStart
+
+    def setPower(self, power) :
+        self.power = power
+
+    def setDegree(self, degree) :
+        self.degree = degree

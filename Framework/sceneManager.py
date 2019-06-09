@@ -8,9 +8,11 @@ class Scene() :
 
 class SceneManager(Scene) :
     instance = None
-
+    point = 0
+    
     def __init__(self) :
         self.isQuit = False
+        self.current_scene = None
 
     @classmethod
     def getInstance(cls) :
@@ -26,3 +28,9 @@ class SceneManager(Scene) :
 
     def setQuit(self, isQuit) :
         self.isQuit = isQuit
+
+    def setPoint(self, point) :
+        self.point = point
+
+    def getPoint(self) :
+        return self.point

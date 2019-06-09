@@ -1,10 +1,11 @@
 import pygame
+from typing import TYPE_CHECKING
 from Framework.sceneManager import Scene, SceneManager
 from Framework.soundManager import SoundManager
 from Framework.animation import Animation
 from Framework.simple_image import SimpleImage
 
-class mainScene(Scene) :
+class resultScene(Scene) :
 
     simple_image_list = []
 
@@ -28,8 +29,8 @@ class mainScene(Scene) :
 
             if event.type == pygame.MOUSEBUTTONDOWN :
                 if self.startButton.isCollisionRect(pygame.mouse.get_pos()) :
-                    from gameScene import gameScene
-                    SceneManager.getInstance().changeScene(gameScene(self.screen, self.clock))
+                    from mainScene import mainScene
+                    SceneManager.getInstance().changeScene(mainScene(self.screen, self.clock))
                     return
 
                 if self.exitButton.isCollisionRect(pygame.mouse.get_pos()) :
@@ -38,8 +39,6 @@ class mainScene(Scene) :
 
 
     def load_resources(self) :
-        SoundManager.getInstance().load_music("Resources/Sounds/BGM.mp3")
-
         self.background = SimpleImage("Resources/Images/Background/mainScene.png")
         self.background.setPos((0,0))
         self.background.setSize((1280,720))
@@ -58,4 +57,4 @@ class mainScene(Scene) :
         self.simple_image_list.append(self.exitButton)
 
 
-        self.title = pygame.font.SysFont("Monospace", 100).render("Hit A Ball", True, (0,0,0))
+        self.title = pygame.font.SysFont("Monospace", 100).render("Score : " + str(SceneManager.getInstance().getPoint()), True, (0,0,0))

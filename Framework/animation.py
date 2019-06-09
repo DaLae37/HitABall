@@ -35,6 +35,10 @@ class Animation(Sprite) :
         self.rect.x = pos[0]
         self.rect.y = pos[1]
 
+    def addPos(self, pos) :
+        self.rect.x += pos[0]
+        self.rect.y += pos[1]
+
     def getPos(self) :
         return (self.rect.x, self.rect.y)
 

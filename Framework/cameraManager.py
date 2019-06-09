@@ -1,5 +1,4 @@
 import pygame
-from Framework import define
 import os, sys
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 
@@ -12,10 +11,10 @@ class CameraManager() :
     dX = 0
     dy = 0
     def update(self) :
-        if self.isFollowing :
+        if self.isFollowing and self.followedObject.getIsMove() is True :
             x = self.followedObject.getPos()[0]
             y = self.followedObject.getPos()[1]
-            self.addCameraPos((x - self.dX , y - self.dY))
+            self.addCameraPos((x - self.dX, y - self.dY))
             self.dX = x
             self.dY = y
             if self.getCameraPos()[1] > 0 :
@@ -40,8 +39,10 @@ class CameraManager() :
 
     def setFollowedObject(self, obj) :
         self.followedObject = obj
-        self.dX = obj.getPos()[0]
-        self.dY = obj.getPos()[1]
+        x = self.followedObject.getPos()[0]
+        y = self.followedObject.getPos()[1]
+        self.dX = x
+        self.dY = y
         self.isFollowing = True
 
     def releaseObject(self) :

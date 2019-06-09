@@ -11,7 +11,7 @@ class OverGround(SimpleImage) :
         mY = movedObject.getPos()[1]
         mSY = movedObject.getSize()[1]
 
-        if self.getPos()[0] + self.getSize()[0] > mX and mY + mSY > self.getPos()[1]:
+        if mY < 620:
             return 0
         else :
             return 1
