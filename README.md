@@ -1,21 +1,5 @@
 # Hit A Ball
 
-# 목차 (클릭하시면 해당 항목으로 이동합니다)
-
-## &nbsp; [Proposal](##Proposal)
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [1.주제](###1.주제)
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [2. 주제 선정 이유](###2.주제-선정-이유)
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [3. 기획](###3.기획)
-
-## &nbsp; [Report](##Report)
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [4.Framwrok](###4.Framework)
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [5.Objects](###5.Objects)
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [6.Codes](###6.Codes)
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [7.Result](###7.Result)
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [8.Github](###8.Github)
-
-<hr>
-
 ## Proposal
 
 ### 1.주제
