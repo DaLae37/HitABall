@@ -2,17 +2,17 @@
 
 # 목차 (클릭하시면 해당 항목으로 이동합니다)
 
-## &nbsp; [Proposal](#Proposal)
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [1.주제](#1.주제)
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [2. 주제 선정 이유](#2.주제-선정-이유)
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [3. 기획](#3.기획)
+## &nbsp; [Proposal](##Proposal)
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [1.주제](###1.주제)
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [2. 주제 선정 이유](###2.주제-선정-이유)
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [3. 기획](###3.기획)
 
-## &nbsp; [Report](#Report)
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [4.Framwrok](#4.Framework)
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [5.Objects](#5.Objects)
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [6.Codes](#6.Codes)
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [7.Result](#7.Result)
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [8.Github](#8.Github)
+## &nbsp; [Report](##Report)
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [4.Framwrok](###4.Framework)
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [5.Objects](###5.Objects)
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [6.Codes](###6.Codes)
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [7.Result](###7.Result)
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [8.Github](###8.Github)
 
 <hr>
 
@@ -38,7 +38,7 @@
 
 따라서 파이썬에서 게임 개발을 지원해주는 PyGame을 이용하기로 결정하였습니다.
 
-PyGame 1.9.6버전을 사용했습니다.
+<b>PyGame 1.9.6버전을 사용했습니다.</b>
 
 **2. 왜 PyGame 프레임 워크를 개발하는가?**
 
@@ -859,13 +859,13 @@ class resultScene(Scene) :
 ![인게임1](https://www.dalae37.com/project/hitaball/resource/image/hitaball_ingame1.webp)
 
 ![인게임2](https://www.dalae37.com/project/hitaball/resource/image/hitaball_ingame2.webp)
-<SpaceBar>를 누르고 있으면 공을 발사할 힘 게이지가 증가합니다
+"SpaceBar"를 누르고 있으면 공을 발사할 힘 게이지가 증가합니다
 
 ![인게임3](https://www.dalae37.com/project/hitaball/resource/image/hitaball_ingame3.webp)
-<MouseClick>을 누르고 있으면 공을 발사할 각도 게이지가 증가합니다
+"MouseClick"을 누르고 있으면 공을 발사할 각도 게이지가 증가합니다
 
 ![인게임4](https://www.dalae37.com/project/hitaball/resource/image/hitaball_ingame4.webp)
-자신이 원하는 만큼 게이지를 충전하고 <Enter>를 누르면 공이 발사가 됩니다
+자신이 원하는 만큼 게이지를 충전하고 "Enter"를 누르면 공이 발사가 됩니다
 
 ![인게임5](https://www.dalae37.com/project/hitaball/resource/image/hitaball_ingame5.webp)
 
