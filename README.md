@@ -24,6 +24,8 @@
 
 <b>PyGame 1.9.6버전을 사용했습니다.</b>
 
+![엔진](https://www.pygame.org/images/logo_lofi.png)
+
 **2. 왜 PyGame 프레임 워크를 개발하는가?**
 
 PyGame은 게임 엔진이 아니라 기능을 지원해주는 모듈입니다.
