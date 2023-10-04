@@ -1,6 +1,6 @@
 # Hit A Ball
 
-'''The license applies only to the Python code, NOT image and sound files'''
+```The license applies only to the Python code, NOT image and sound files```
 
 ## Proposal
 
